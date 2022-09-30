@@ -1,8 +1,9 @@
 import { ReactElement, useState } from "react";
 import { WinningScreen } from "./WinningScreen";
 import { LosingScreen } from "./LosingScreen";
-import { getRandomPossibleOption } from "./getRandomPossibleOption";
-import { getRandomWinningNumber } from "./getRandomWinningNumber";
+import { getRandomPossibleOption } from "../helpers/getRandomPossibleOption";
+import { getRandomWinningNumber } from "../helpers/getRandomWinningNumber";
+import { NumberFact } from "./NumberFact";
 
 function App(): ReactElement {
   // const [currentNumber, setCurrentNumber] = useState(0);
@@ -70,6 +71,10 @@ function App(): ReactElement {
       <h1>NUMBDLE</h1>
       <h2>Current Number: {currentNumber}</h2>
       <h2>Target number: {targetNumber}</h2>
+      <h3>
+        Random Fact of number:
+        <NumberFact num={1} />
+      </h3>
       <ul>
         {historyLog.map((historyLog, index) => {
           return <li key={index}>{historyLog}</li>;
