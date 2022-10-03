@@ -10,6 +10,7 @@ function App(): ReactElement {
   const [targetNumber, setTargetNumber] = useState(randomNumber());
   const [historyLog, setHistoryLog] = useState<string[]>([]);
   const [numberHistory, setNumberHistory] = useState<number[]>([0]);
+
   const currentNumber = numberHistory[numberHistory.length - 1];
   if (currentNumber === targetNumber) {
     return <WinningScreen resetGame={resetGame} />;
@@ -68,12 +69,12 @@ function App(): ReactElement {
   }
   return (
     <>
-      <h1>NUMBDLE</h1>
+      <h1>NUMBDL</h1>
       <h2>Current Number: {currentNumber}</h2>
       <h2>Target number: {targetNumber}</h2>
       <h3>
         Random Fact of number:
-        <NumberFact num={1} />
+        <NumberFact num={targetNumber} />
       </h3>
       <ul>
         {historyLog.map((historyLog, index) => {
